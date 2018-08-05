@@ -32,7 +32,7 @@ public class Lesson6IfStatement {
             withdrawRate = 10;
         } else if (amount <= 500) {
             withdrawRate = 5;
-        } else if (amount >= 1000) {
+        } else if (amount <= 1000) {
             withdrawRate = 2;
         } else {
             withdrawRate = 1;

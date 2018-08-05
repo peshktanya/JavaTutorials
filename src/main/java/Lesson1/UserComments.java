@@ -14,6 +14,14 @@ public class UserComments {
         /**
          * Documentation comment
          */
+
+        /**
+         * Assert.assertEquals сравнивает фактический и ожидаемый параметры.
+         * Обратите внимание, что в методах Assert у testng первым параметром идет фактический результат,
+         * а вторым ожидаемый.
+         * В Assert у Junit наоборот!!! (expected, actual)
+         */
+
         System.out.println("Hello world");
     }
 }

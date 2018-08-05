@@ -9,61 +9,55 @@ public class SelectionTests {
 
     @Test
     public void moreTernary(){
-        String url = "www.eviltester.com";
+        String url = "www.google.com";
 
-        url = url.startsWith("http") ? url : addHttp(url);
+        url = url.startsWith("http") ? url : "http://" + url;
 
         assertTrue(url.startsWith("http://"));
-        assertEquals("http://www.eviltester.com", url);
+        assertEquals(url, "http://www.google.com");
     }
-
-    private String addHttp(String url) {
-        return "http://" + url;
-    }
-
 
     @Test
     public void ifAddHttp(){
-        String url = "www.seleniumsimplified.com";
+        String url = "www.google.com";
         if(!url.startsWith("http")){
-            url = addHttp(url);
+            url = "http://" + url;
         }
         assertTrue(url.startsWith("http://"));
-        assertEquals("http://www.seleniumsimplified.com", url);
-    }
+        assertEquals(url, "http://www.google.com");
 
+    }
 
     @Test
     public void ifElseAddHttp(){
-        String url = "www.seleniumsimplified.com";
+        String url = "www.google.com";
         if(url.startsWith("http")){
             // do nothing the url is fine
         }else{
-            url = addHttp(url);
+            url = "http://" + url;
         }
         assertTrue(url.startsWith("http://"));
-        assertEquals("http://www.seleniumsimplified.com", url);
+        assertEquals(url, "http://www.google.com");
     }
 
     @Test
     public void ifElseNestedAddHttp(){
-        String url = "seleniumsimplified.com";
+        String url = "www.google.com";
         if(url.startsWith("http")){
             // do nothing the url is fine
         }else{
             if(!url.startsWith("www")){
                 url = "www." + url;
             }
-            url = addHttp(url);
+            url = "http://" + url;
         }
         assertTrue(url.startsWith("http://"));
-        assertEquals("http://www.seleniumsimplified.com", url);
+        assertEquals(url, "http://www.google.com");
     }
-
 
     @Test
     public void ifElseNestedAddHttpReformatted(){
-        String url = "seleniumsimplified.com";
+        String url = "google.com";
         if(url.startsWith("http"))
         {
             // do nothing the url is fine
@@ -73,10 +67,10 @@ public class SelectionTests {
             {
                 url = "www." + url;
             }
-            url = addHttp(url);
+            url = "http://" + url;
         }
         assertTrue(url.startsWith("http://"));
-        assertEquals("http://www.seleniumsimplified.com", url);
+        assertEquals(url, "http://www.google.com");
     }
 
 }
